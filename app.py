@@ -121,7 +121,7 @@ def create_population_pyramid():
     
     # Read the data
     #file_path = r'C:\Users\Svitlana\OneDrive\RoFacts\mvp\data\population.xlsx'
-    file_path = r'data/population.xlsx'
+    file_path = r'Data/population.xlsx'
     df = pd.read_excel(file_path)
 
     # Extract data from DataFrame
@@ -270,7 +270,7 @@ def create_population_pyramid():
 @st.cache_data
 def load_life_expectancy_data():
     #file_path = r'C:\Users\Svitlana\OneDrive\RoFacts\mvp\data\life_expectancy.xlsx'
-    file_path = r'data/life_expectancy.xlsx'
+    file_path = r'Data/life_expectancy.xlsx'
     return pd.read_excel(file_path)
 
 def create_life_expectancy_chart():
@@ -386,13 +386,13 @@ def create_life_expectancy_chart():
 @st.cache_data
 def load_wage_data():
     #return pd.read_csv(r'C:\Users\Svitlana\OneDrive\RoFacts\mvp\data\real_wage.csv')
-    return pd.read_csv(r'data/real_wage.csv')
+    return pd.read_csv(r'Data/real_wage.csv')
 
 # Load GDP data from CSV instead of API
 @st.cache_data
 def load_gdp_data():
     #df = pd.read_csv(r'C:\Users\Svitlana\OneDrive\RoFacts\mvp\data\gdp.csv')
-    df = pd.read_csv(r'data/gdp.csv')
+    df = pd.read_csv(r'Data/gdp.csv')
     df = df[(df['year'] >= 1990) & (df['year'] <= 2025)]
     df = df.sort_values('year')
     return df
